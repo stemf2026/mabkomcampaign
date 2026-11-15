@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs>
+    <linearGradient id="sky2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="45%" stop-color="#6b1b5a"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <radialGradient id="glowAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#sky2)"/>
+  
+  <!-- Atmosphere -->
+  <circle cx="150" cy="100" r="200" fill="#f97316" opacity="0.08"/>
+  <circle cx="1280" cy="680" r="260" fill="#ec4899" opacity="0.1"/>
+  <circle cx="1100" cy="80" r="120" fill="#fbbf24" opacity="0.1"/>
+
+  <!-- Particles -->
+  <g fill="#fde68a" opacity="0.35">
+    <circle cx="80" cy="250" r="2.5"/>
+    <circle cx="200" cy="150" r="2"/>
+    <circle cx="60" cy="480" r="3"/>
+    <circle cx="1320" cy="300" r="2.5"/>
+    <circle cx="1200" cy="180" r="2"/>
+  </g>
+
+  <!-- Floating news / post cards -->
+  <g filter="url(#cardShadow)">
+    <!-- Card 1 - Verified -->
+    <g transform="translate(140,160)">
+      <rect width="280" height="170" rx="18" fill="#1e1b4b"/>
+      <rect x="0" y="0" width="280" height="8" rx="4" fill="#4ade80"/>
+      <circle cx="40" cy="45" r="18" fill="#22c55e"/>
+      <path d="M32 45 L38 51 L50 38" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+      <rect x="70" y="35" width="140" height="12" rx="4" fill="#a3e635"/>
+      <rect x="70" y="55" width="90" height="8" rx="3" fill="#64748b"/>
+      <rect x="20" y="85" width="240" height="60" rx="10" fill="#312e81"/>
+      <text x="30" y="122" font-family="system-ui,sans-serif" font-size="14" fill="#86efac" font-weight="700">✓ VERIFIED SOURCE</text>
+    </g>
+
+    <!-- Card 2 - Suspicious -->
+    <g transform="translate(180,380)" opacity="0.9">
+      <rect width="260" height="150" rx="16" fill="#1e1b4b"/>
+      <rect x="0" y="0" width="260" height="8" rx="4" fill="#f87171"/>
+      <circle cx="38" cy="42" r="16" fill="#ef4444"/>
+      <text x="32" y="48" font-family="system-ui,sans-serif" font-size="18" fill="#fff" font-weight="800">!</text>
+      <rect x="65" y="32" width="130" height="11" rx="4" fill="#fca5a5"/>
+      <rect x="65" y="50" width="85" height="7" rx="3" fill="#64748b"/>
+      <rect x="18" y="80" width="224" height="50" rx="8" fill="#3f1d2e"/>
+      <text x="28" y="112" font-family="system-ui,sans-serif" font-size="13" fill="#fca5a5" font-weight="700">⚠ CHECK SOURCE</text>
+    </g>
+  </g>
+
+  <!-- Giant magnifying glass -->
+  <g filter="url(#glowSoft)">
+    <circle cx="920" cy="340" r="150" fill="none" stroke="#fbbf24" stroke-width="22"/>
+    <circle cx="920" cy="340" r="130" fill="#1a0a2e" opacity="0.55"/>
+    <circle cx="920" cy="340" r="150" fill="url(#glowAmber)" opacity="0.4"/>
+    
+    <!-- Handle -->
+    <line x1="1030" y1="450" x2="1180" y2="600" stroke="#fbbf24" stroke-width="28" stroke-linecap="round"/>
+    
+    <!-- Big check inside -->
+    <path d="M850 340 L900 390 L1000 280" fill="none" stroke="#4ade80" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Small floating search icons -->
+  <g opacity="0.3" fill="#fde68a">
+    <circle cx="700" cy="160" r="8"/>
+    <circle cx="750" cy="200" r="5"/>
+    <circle cx="680" cy="220" r="6"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="420" y="680" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="800" fill="#fce7f3">Suriin Bago</text>
+  <text x="420" y="730" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="32" font-weight="600" fill="#f9a8d4">Magbahagi</text>
+
+  <rect x="0" y="780" width="1400" height="20" fill="#fbbf24" opacity="0.35"/>
+</svg>

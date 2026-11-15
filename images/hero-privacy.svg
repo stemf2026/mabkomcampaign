@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs>
+    <linearGradient id="sky3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#0c4a6e"/>
+      <stop offset="100%" stop-color="#164e63"/>
+    </linearGradient>
+    <linearGradient id="lockBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowLock" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="deepShadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#sky3)"/>
+  
+  <!-- Deep space / digital atmosphere -->
+  <circle cx="200" cy="120" r="240" fill="#22d3ee" opacity="0.06"/>
+  <circle cx="1250" cy="650" r="300" fill="#0ea5e9" opacity="0.08"/>
+  <circle cx="1000" cy="80" r="160" fill="#67e8f9" opacity="0.07"/>
+
+  <!-- Stars / data points -->
+  <g fill="#bae6fd" opacity="0.5">
+    <circle cx="100" cy="200" r="2"/>
+    <circle cx="250" cy="80" r="1.5"/>
+    <circle cx="80" cy="400" r="2.5"/>
+    <circle cx="180" cy="550" r="1.8"/>
+    <circle cx="1300" cy="250" r="2"/>
+    <circle cx="1150" cy="150" r="1.5"/>
+    <circle cx="1350" cy="450" r="2.2"/>
+    <circle cx="1050" cy="500" r="1.5"/>
+  </g>
+
+  <!-- Shield (left) -->
+  <g filter="url(#deepShadow)" transform="translate(160,180)">
+    <path d="M160 20 L280 70 L280 200 C280 280 220 340 160 380 C100 340 40 280 40 200 L40 70 Z" 
+          fill="#0ea5e9" opacity="0.95"/>
+    <path d="M160 55 L250 95 L250 200 C250 260 210 305 160 335 C110 305 70 260 70 200 L70 95 Z" 
+          fill="#e0f2fe"/>
+    <!-- Check -->
+    <path d="M120 200 L150 230 L210 160" fill="none" stroke="#0369a1" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Giant Lock -->
+  <g filter="url(#glowLock)" transform="translate(780,140)">
+    <!-- Shackle -->
+    <path d="M110 180 C110 90 170 30 240 30 C310 30 370 90 370 180" 
+          fill="none" stroke="#38bdf8" stroke-width="36" stroke-linecap="round"/>
+    <!-- Lock body -->
+    <rect x="70" y="160" width="340" height="280" rx="36" fill="url(#lockBody)"/>
+    <rect x="95" y="185" width="290" height="230" rx="24" fill="#0369a1"/>
+    
+    <!-- Keyhole -->
+    <circle cx="240" cy="280" r="38" fill="#0c4a6e"/>
+    <rect x="222" y="310" width="36" height="70" rx="12" fill="#0c4a6e"/>
+    
+    <!-- Glow center -->
+    <circle cx="240" cy="280" r="80" fill="url(#glowCyan)"/>
+  </g>
+
+  <!-- Floating privacy symbols -->
+  <g opacity="0.4" fill="#7dd3fc">
+    <circle cx="520" cy="140" r="7"/>
+    <circle cx="560" cy="180" r="4"/>
+    <circle cx="500" cy="200" r="5"/>
+    <circle cx="600" cy="120" r="3"/>
+  </g>
+
+  <!-- Digital ring around lock -->
+  <circle cx="1020" cy="340" r="220" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.2" stroke-dasharray="8 12"/>
+  <circle cx="1020" cy="340" r="260" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.12" stroke-dasharray="4 16"/>
+
+  <!-- Title -->
+  <text x="360" y="680" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="36" font-weight="800" fill="#e0f2fe">Privacy ay</text>
+  <text x="360" y="730" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="32" font-weight="600" fill="#7dd3fc">Kaligtasan</text>
+
+  <rect x="0" y="780" width="1400" height="20" fill="#22d3ee" opacity="0.35"/>
+</svg>

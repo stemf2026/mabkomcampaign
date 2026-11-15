@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makilahok | Mag-isip Bago Mag-Post</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.svg" alt="" width="28" height="28" class="logo-icon"> Mag-isip Bago Mag-Post
+        <span>UNC SHS</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Tungkol</a>
+        <a href="guides.html">Gabay</a>
+        <a href="references.html">Sanggunian</a>
+        <a href="join.html" class="active">Makilahok</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Gumawa ng Pangako</h2>
+      <p class="section-intro" style="text-align: center;">
+        Pumili ng isang konkretong gawi na susundin mo simula ngayon.  
+        Ang maliit na pagbabago ay nagsisimula sa isang desisyon.
+      </p>
+
+      <div class="pledge-form">
+        <form id="pledgeForm">
+          <label for="name">Pangalan o Nickname (opsyonal)</label>
+          <input type="text" id="name" name="name" placeholder="Hal. Alex o Grade 11 Student" maxlength="40">
+
+          <label>Aking Pangako</label>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" name="pledge" value="think">
+              Sa bawat pag-post o share, mag-iisip muna ako bago mag-click.
+            </label>
+            <label>
+              <input type="checkbox" name="pledge" value="factcheck">
+              Susuriin ko muna ang impormasyon bago ito ibahagi o paniwalaan.
+            </label>
+            <label>
+              <input type="checkbox" name="pledge" value="privacy">
+              Protektahan ko ang aking personal na impormasyon at i-check ang privacy settings.
+            </label>
+            <label>
+              <input type="checkbox" name="pledge" value="kind">
+              Maging magalang ako sa online interactions at iwasan ang cyberbullying.
+            </label>
+            <label>
+              <input type="checkbox" name="pledge" value="screentime">
+              Lilimitahan ko ang screen time para may oras pa sa pag-aaral at pamilya.
+            </label>
+          </div>
+
+          <button type="submit">Isulat ang Aking Pangako</button>
+        </form>
+
+        <div id="successMsg" class="success-msg" hidden>
+          <strong>Salamat!</strong> Naipangako mo na ang iyong responsableng gawi.<br>
+          Simulan ito ngayon — ang pagbabago ay nagsisimula sa iyo.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ibang Paraan ng Pakikilahok</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon"><img src="images/icons/megaphone.svg" alt="" width="40" height="40"></div>
+          <h3>Ibahagi ang Mensahe</h3>
+          <p>I-share ang slogan o gabay sa iyong friends at classmates. Ang isang post ay maaaring makatulong sa iba.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><img src="images/icons/speak.svg" alt="" width="40" height="40"></div>
+          <h3>Maging Role Model</h3>
+          <p>Ipakita sa mga kaibigan ang tamang gawi. Ang mabuting ehemplo ay mas epektibo kaysa sa mahabang lecture.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><img src="images/icons/handshake.svg" alt="" width="40" height="40"></div>
+          <h3>Suportahan ang Kampanya</h3>
+          <p>Dumalo sa aming advocacy booth o oral presentation sa paaralan at magbigay ng feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-box">
+      <h2>Mag-isip. Mag-check. Protektahan.</h2>
+      <p>Ang responsableng paggamit ng social media ay nagsisimula sa iyo.  
+         Sama-sama nating gawing mas ligtas at matalino ang online space.</p>
+      <a href="guides.html" class="btn btn-primary">Basahin ang Buong Gabay</a>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Pangkat 1 — Responsableng Paggamit ng Social Media</strong></p>
+    <p>University of Nueva Caceres Senior High School</p>
+    <p class="team">
+      Bancaso • Bautista • Cuarto • Dayo • De Los Santos • Dela Rosa • Garlan
+    </p>
+  </footer>
+
+  <script>
+  (function () {
+    var form = document.getElementById('pledgeForm');
+    var successMsg = document.getElementById('successMsg');
+    var KEY = 'mabkom-pledge';
+
+    // If already pledged on this browser, show success state
+    if (localStorage.getItem(KEY)) {
+      form.hidden = true;
+      successMsg.hidden = false;
+      return;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var checked = form.querySelectorAll('input[name="pledge"]:checked');
+      if (!checked.length) {
+        alert('Pumili ng kahit isang pangako.');
+        return;
+      }
+      localStorage.setItem(KEY, '1');
+      form.hidden = true;
+      successMsg.hidden = false;
+    });
+  })();
+  </script>
+</body>
+</html>
